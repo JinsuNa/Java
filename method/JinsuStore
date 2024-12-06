@@ -1,0 +1,19 @@
+package basic.method;
+
+public class JinsuStore {
+    int addNumers(int numA, int numB) {
+//        int sum = numA + numB; 이 방법도 할 수는 있지만 바로 return에 결과값을 넣어 해결할 수도 있다.
+        System.out.print(numA + " + " + numB + " = ");
+        return numA + numB;
+    }
+
+     void printTitle(String data) {
+        System.out.println(data);
+
+    }
+
+    int minusNumbers(int numA, int numB) {
+        System.out.print(numA + " - " + numB + " = ");
+        return numA - numB;
+    }
+}
