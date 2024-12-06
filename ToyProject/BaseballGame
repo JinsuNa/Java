@@ -1,0 +1,53 @@
+package basic.baseballgame;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class BaseballGame {
+    public static void main(String[] args) {
+//        전달받을 값
+        int[] result = new int[3];
+        int count = 0;
+//      사용자한테 값을 입력 받아야 한다.
+        Scanner sc = new Scanner(System.in);
+        String[] input = sc.next().split("");
+        while (true) {
+            if (input.length != result.length) {
+                System.out.println("3자리의 숫자만 입력하세요");
+                return;
+            } else {
+                System.out.println(Arrays.toString(input));
+                randomNumber(count, result);
+            }
+        }
+
+
+
+
+
+
+
+
+    }
+
+    private static void randomNumber(int count, int[] result) {
+
+        while (count < 3) {
+            int num = (int) (Math.random() * 4);
+            boolean flag = false;
+            for (int i = 0; i < 3; i++) {
+                if (result[i] == num) {
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag == false) {
+                result[count] = num;
+                count++;
+            }
+        }
+        System.out.println(Arrays.toString(result));
+    }
+
+
+}
