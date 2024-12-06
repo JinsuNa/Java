@@ -1,0 +1,36 @@
+package basic.method;
+
+public class JinsuHouse {
+    static int a = 3;
+    static int b = 4;
+    public static void main(String[] args) {
+//        JinsuHouse.printTitle("이거 출력해줘"); static 이 없다는 가정하에 사용할 수 있는 방법
+        JinsuStore jin = new JinsuStore(); /* new로 선언을 하면 static 이 아닌 heap 영역으로 간다. */
+        jin.printTitle("오늘은 지하철 파업");
+
+//        두 수를 바꾸는 메서드를 static 으로 만들어 처리
+
+//        int a = 3;
+//        int b = 4;
+//        바꾸기 전
+
+        String data = "a = " + a + ", b = " + b;
+        jin.printTitle(data);  /* a = 3, b = 4 이 값은 메모리에 스택이 되어 있다. */
+
+
+
+//        두 수를 바꾸는 메서드를 호출
+        swapData();
+        data = "a = " + a + ", b = " + b;
+        jin.printTitle(data);
+
+    }
+
+    private static void swapData() {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
+
+
+}
