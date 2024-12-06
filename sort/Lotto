@@ -1,0 +1,64 @@
+package basic.sort;
+
+import basic.method.MethodTest;
+
+import java.util.Arrays;
+
+public class Lotto {
+    public static void main(String[] args) {
+        int[] lottoNumber = new int[6];
+        int[] myNumber = new int[6];
+        String[] checkLotto = new String[lottoNumber.length];
+        int num = 0;
+
+
+        int count = 0;
+
+        createLottoNum(count, myNumber);
+        System.out.println("내 당첨 번호: " + Arrays.toString(myNumber));
+        createLottoNum(count, lottoNumber);
+        System.out.println("로또 로또 번호: " + Arrays.toString(lottoNumber));
+        checkLottoNum(lottoNumber, myNumber, checkLotto);
+        System.out.println(Arrays.toString(checkLotto));
+
+
+
+
+    }
+
+    private static void checkLottoNum(int[] lottoNumber, int[] myNumber, String[] checkLotto) {
+        for (int i = 0; i < lottoNumber.length; i++) {
+            boolean flag = false;
+            for (int j = 0; j < lottoNumber.length; j++) {
+                if (myNumber[i] == lottoNumber[j]) {
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag == true) {
+                checkLotto[i] = "일치";
+            } else {
+                checkLotto[i] = "불일치";
+            }
+        }
+    }
+
+    private static void createLottoNum(int count, int[] randomNum) {
+        int num;
+        while (count < 6) {
+            num = (int) (Math.random() * 45 + 1);
+//            중복 번호인지 확인해야 한다
+            boolean flag = false;
+            for (int i = 0; i <= count; i++) {
+                if (randomNum[i] == num) {
+                    flag = true;
+                    break;
+                }
+            }
+            if (flag == false) {
+                randomNum[count] = num;
+                count++;
+            }
+        }
+    }
+}
