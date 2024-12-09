@@ -1,0 +1,11 @@
+package oopCh01.service;
+
+public class ServiceMain {
+    public static void main(String[] args) {
+        //접근 제어자
+        Calculator calculator = new Calculator();
+        calculator.add(); // public 은 어디에서나 가능하다.
+        calculator.minus(); // 생략을 하여 같은 패키지 내에서 가능하다.
+//      calculator.multiple(); 프라이빗은 해당 구역에서만 사용 가능하다. (은닉화 hidden)
+    }
+}
