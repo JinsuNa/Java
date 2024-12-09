@@ -1,0 +1,28 @@
+package myClass.chicken;
+
+public class Chicken {
+    public String brand; //아래에 있는 다섯개는 멤버변수이다.
+    public String menu;
+    public int price;
+    private String model;
+
+    //Getter : private 값을 요청    //아래는 전부 메서드이다.
+//    public String getModel() {
+//        return model;
+//    }
+    public void modelPrint(){
+        System.out.println(this.brand + "의 모델은 " + this.model + "입니다.");
+    }
+    //Setter : private 값에 할당
+    public void setModel(String model) {
+
+        this.model = model;
+    }
+
+
+    public Chicken(String brand, String menu, int price) {
+        this.brand = brand;
+        this.menu = menu;
+        this.price = price;
+    }
+}
