@@ -1,0 +1,12 @@
+import carPackage.Speed;
+
+public class SpeedMain {
+    public static void main(String[] args) {
+        Speed speed = new Speed();
+        speed.speedUpAndDown();
+    }
+
+
+
+}
+
