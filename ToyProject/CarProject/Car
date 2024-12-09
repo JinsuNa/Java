@@ -12,24 +12,23 @@ public class Car {
     //출고 후 결정
     private String color;
     private boolean navigation;
-    //엑셀과 브레이크
-    private int speedUp;
-    private int speedDown;
+    //모든 옵션 확인
+
 
     public void Caroption() {
         switch (this.brand) {
             case "현대":
-                System.out.println("나의 애마 " + this.name + "는(은) " + this.brand + " 브랜드이며 " + this.power + "cc입니다.");
+                System.out.println("===========================");
                 System.out.println("옵션을 선택해주세요");
                 System.out.println("색상 : 1. 데이토나 그레이, 2. 임모탈 블랙, 3. 흰색");
 
                 break;
             case "기아":
-                System.out.println("나의 애마 " + this.name + "는(은) " + this.brand + " 브랜드이며 " + this.power + "cc입니다.");
+                System.out.println("===========================");
                 System.out.println("색상 : 1. 데이토나 그레이, 2. 임모탈 블랙, 3. 흰색");
                 break;
             case "삼성":
-                System.out.println("나의 애마 " + this.name + "는(은) " + this.brand + " 브랜드이며 " + this.power + "cc입니다.");
+                System.out.println("===========================");
                 System.out.println("색상 : 1. 데이토나 그레이, 2. 임모탈 블랙, 3. 흰색");
                 break;
             default:
@@ -47,6 +46,7 @@ public class Car {
     }
 
     public void carMenu() {
+        System.out.println("===========================");
         System.out.println(this.num + "번 " + this.brand + " " + this.power + "cc " + this.name);
 
     }
@@ -56,19 +56,24 @@ public class Car {
     }
 
     public void setColor(int colorOption) {
+        System.out.println("===========================");
         System.out.println("색상 옵션을 입력하세요.");
         System.out.println("1: 데이토나 그레이, 2: 임모탈 블랙, 3: 흰색");
-                switch (colorOption) {
+        switch (colorOption) {
             case 1:
+                System.out.println("===========================");
                 this.color = "데이토나 그레이";
                 return;
             case 2:
+                System.out.println("===========================");
                 this.color = "임모탈 블랙";
                 return;
             case 3:
+                System.out.println("===========================");
                 this.color = "흰색";
                 return;
             default:
+                System.out.println("===========================");
                 System.out.println("잘못된 숫자를 입력하셨습니다.");
                 break;
         }
@@ -82,12 +87,23 @@ public class Car {
         this.navigation = navigation;
 
         if (navigation) {
-            System.out.println("네비게이");
+            System.out.println("===========================");
+            System.out.println("네비게이션 옵션을 선택하였습니다");
+        } else {
+            System.out.println("===========================");
+            System.out.println("네비게이션 옵션을 선택하지 않으셨습니다.");
+        }
+    }
+
+    public void carPreview() {
+        System.out.print(this.brand + " " + this.name + " " + this.power + "cc " + this.color + " ");
+        if (this.navigation) {
+            System.out.println("네비게이션을 장착하였습니다.");
+        } else {
+            System.out.println("네비게이션을 장착하지 않았습니다.");
         }
     }
 
 
+
 }
-
-
-
