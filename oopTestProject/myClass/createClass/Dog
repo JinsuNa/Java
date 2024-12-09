@@ -1,0 +1,23 @@
+package myClass.createClass;
+
+/*Objected(나)
+
+Member variable( 나를 식별하는 값)
+ex) 키, 몸무게, 시력, 이름, 주민번호, 성별 (멤버 변수 중에서 public, private, protected 한것들이 있다.
+
+Method (나의 동작)
+ex) 먹는다() 춤춘다() 복사한다() 출근한다() ---> 이 동작들도 public, private, protected 한것들이 있다.
+
+위 객체, 멤버변수, 메서드를 이용하여 코드를 만드는 것이며 이것에 대한 도면을 class(멤버변수와, 메서드를 가지고있는다. new 를 선언할 수 없다)라 하며,
+ object(new를 할 수 있다.)  ex) class = 가구 , object = 책상, 침대, etc...
+ object 를 통해 new 된 값을 instance라고 한다.
+
+ */
+
+public class Dog {
+    public final String type = "시고르자브종";
+    public String name = "토토";
+    public int age = 5;
+    public String color = "하얀색";
+
+}
