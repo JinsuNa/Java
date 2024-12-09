@@ -1,0 +1,20 @@
+package myClass;
+
+import myClass.createClass.Dog;
+
+public class DogMain {
+    public static void main(String[] args) {
+        Dog toto = new Dog(); //toto는 instance 이며 heap으로 올라가진다. --> 클래스이름() 안에 있는 빈칸을 '생성자' 라고 한다.
+        System.out.println(toto.type);
+        System.out.println(toto.name);
+        System.out.println(toto.age);
+        System.out.println(toto.color);
+//        1년 후
+        toto.age++;
+        toto.color = "노란색";
+        System.out.println("============1년 후=============");
+        System.out.println(toto.age);
+        System.out.println(toto.color);
+
+    }
+}
