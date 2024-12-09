@@ -1,0 +1,18 @@
+package myClass;
+
+import myClass.chicken.Chicken;
+
+public class ChickenMain {
+    public static void main(String[] args) {
+        Chicken 교촌 = new Chicken("교촌", "간장치킨", 21000);
+        Chicken bbq = new Chicken("bbq", "황금올리브", 23000);
+        Chicken jadam = new Chicken("jadam", "간장순살치킨", 19000);
+        jadam.setModel("권은비");  //private String model 에 있는 코드를 불러 올 순 없지만 set을 사용하여 행위를 통하여 프라이빗한 model을 세팅해준다.
+//        System.out.println(jadam.brand + " 모델은 " + jadam.getModel());
+        jadam.modelPrint();
+        System.out.println(교촌.brand + " " + 교촌.menu + "을" + " " + 교촌.price + "에 주문했습니다.");
+        System.out.println(bbq.brand + " " + bbq.menu + "을" + " " + bbq.price + "에 주문했습니다.");
+        System.out.println(jadam.brand + " " + jadam.menu + "을" + " " + jadam.price + "에 주문했습니다.");
+    }
+}
+
