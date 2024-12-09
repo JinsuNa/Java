@@ -1,0 +1,20 @@
+package oopCh01.service;
+
+//public : 공용  -> 현재 패키지 외 어느곳에서도 접근할 수 있다
+// 생략 : 현재의 패키지 안에서만 참조가 가능하다.
+//private : 외부 참조가 안된다.
+//protected : 현재 패키지 + 파생 클래스 까지 볼 수 있다.
+// 가장 많이 쓰는건 public, private 다.
+public class Calculator {
+    public void add() {
+        System.out.println("더하기 메서드");
+    }
+
+    void minus() {
+        System.out.println("빼기 메서드");
+    }
+
+    private void multiple() {
+        System.out.println("곱하기 메서드");
+    }
+}
