@@ -1,6 +1,6 @@
 package myClass;
 
-import myClass.chicken.Chicken;
+import myClass.chicken;
 
 public class ChickenMain {
     public static void main(String[] args) {
