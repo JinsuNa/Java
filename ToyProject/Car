@@ -1,0 +1,93 @@
+package carPackage;
+
+import java.util.Scanner;
+
+public class Car {
+    Scanner sc = new Scanner(System.in);
+    //출고 시 결정
+    public String brand;
+    public int num;
+    public int power;
+    public String name;
+    //출고 후 결정
+    private String color;
+    private boolean navigation;
+    //엑셀과 브레이크
+    private int speedUp;
+    private int speedDown;
+
+    public void Caroption() {
+        switch (this.brand) {
+            case "현대":
+                System.out.println("나의 애마 " + this.name + "는(은) " + this.brand + " 브랜드이며 " + this.power + "cc입니다.");
+                System.out.println("옵션을 선택해주세요");
+                System.out.println("색상 : 1. 데이토나 그레이, 2. 임모탈 블랙, 3. 흰색");
+
+                break;
+            case "기아":
+                System.out.println("나의 애마 " + this.name + "는(은) " + this.brand + " 브랜드이며 " + this.power + "cc입니다.");
+                System.out.println("색상 : 1. 데이토나 그레이, 2. 임모탈 블랙, 3. 흰색");
+                break;
+            case "삼성":
+                System.out.println("나의 애마 " + this.name + "는(은) " + this.brand + " 브랜드이며 " + this.power + "cc입니다.");
+                System.out.println("색상 : 1. 데이토나 그레이, 2. 임모탈 블랙, 3. 흰색");
+                break;
+            default:
+                System.out.println("잘못입력하셨습니다.");
+                return;
+        }
+    }
+
+    public Car(int num, String brand, int power, String name) {
+        this.num = num;
+        this.brand = brand;
+        this.power = power;
+        this.name = name;
+
+    }
+
+    public void carMenu() {
+        System.out.println(this.num + "번 " + this.brand + " " + this.power + "cc " + this.name);
+
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(int colorOption) {
+        System.out.println("색상 옵션을 입력하세요.");
+        System.out.println("1: 데이토나 그레이, 2: 임모탈 블랙, 3: 흰색");
+                switch (colorOption) {
+            case 1:
+                this.color = "데이토나 그레이";
+                return;
+            case 2:
+                this.color = "임모탈 블랙";
+                return;
+            case 3:
+                this.color = "흰색";
+                return;
+            default:
+                System.out.println("잘못된 숫자를 입력하셨습니다.");
+                break;
+        }
+    }
+
+    public boolean isNavigation() {
+        return navigation;
+    }
+
+    public void setNavigation(boolean navigation) {
+        this.navigation = navigation;
+
+        if (navigation) {
+            System.out.println("네비게이");
+        }
+    }
+
+
+}
+
+
+
