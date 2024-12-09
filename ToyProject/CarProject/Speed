@@ -1,0 +1,52 @@
+package carPackage;
+
+import java.util.Random;
+
+public class Speed {
+    private int speed = 0; // 현재 속도
+    private Random random = new Random(); // 랜덤 값 생성을 위한 Random 객체
+
+    // Getter와 Setter
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        // 속도를 설정할 때 제한 조건 추가
+        if (speed < 0) {
+            this.speed = 0; // 속도가 음수일 경우 0으로 고정
+        } else if (speed > 30) {
+            this.speed = 30; // 속도가 30 초과일 경우 30으로 고정
+        } else {
+            this.speed = speed; // 정상 범위 속도
+        }
+    }
+
+    public Random getRandom() {
+        return random;
+    }
+
+    public void setRandom(Random random) {
+        this.random = random;
+    }
+
+    // 속도를 랜덤하게 증감시키는 메서드
+    public void speedUpAndDown() {
+        do {
+            // 속도를 랜덤으로 증가 또는 감소
+            int change = random.nextBoolean() ? 5 : -5;
+            setSpeed(this.speed + change); // setSpeed로 속도 변경 및 제한 적용
+
+            // 출력 조건
+            if (this.speed == 0) {
+                System.out.println("멈췄습니다.");
+            } else if (this.speed == 30) {
+                System.out.println("과속입니다.");
+                System.out.println("현재 30km를 유지합니다.");
+            } else {
+                System.out.println("출발합니다.");
+                System.out.println("현재 속도는 " + this.speed + "km 입니다.");
+            }
+        } while (this.speed > 0); // 속도가 0이면 루프 종료
+    }
+}
