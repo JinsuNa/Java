@@ -1,3 +1,37 @@
+/*
+Hamburger {
+
+name : 버거
+재료1 : 번           --> cheeseburger 로 상속했다 (부모가 선언한 class들을 내것처럼 사용 가능하다)
+재료2 : 양상추
+
+}
+
+
+CheeseBurger extends Hamburger {
+
+name = "치즈햄버거"
+재료3 = "치즈듬뿍"
+
+}
+
+부모로부터 상속받은 내용 중에(메서드)
+
+자식이 부모로부터 상속받은걸 재정의 하면 부모의 상속은 무시가 된다
+
+이거를 '오버라이딩' 이라고 한다.
+
+오버로딩에 대한 내용은 다시한번 알아봐야겠다.
+
+
+모든 프로젝트의 부모는
+
+object 이다.
+
+
+*/
+
+
 package myClass.extendTest;
 
 public class Hamburger {
