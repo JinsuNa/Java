@@ -2,10 +2,15 @@ package basic.vendingmachine_v02;
 
 import basic.vendingmachine_v02.view.AdminView;
 import basic.vendingmachine_v02.view.UserView;
+import basic.vendingmachine_v02.vo.Product;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class MachineMain {
+
+
 
     // 사용자가 입력한 돈 관리용
 
@@ -39,38 +44,30 @@ public class MachineMain {
                         adminMenuNumber = sc.nextInt();
                         switch (adminMenuNumber) {
                             case 1:
-                                System.out.println("1. 메뉴등록");
-                                adminView.insertMenu();
+                                adminView.insertMenu(); //완료
                                 break;
                             case 2:
-                                System.out.println("2. 메뉴삭제");
-                                adminView.deleteMenu();
+                                adminView.deleteMenu(); // 완료
                                 break;
                             case 3:
-                                System.out.println("3. 메뉴수정");
-                                adminView.updateMenu();
+                                adminView.updateMenu(); // 완료
                                 break;
                             case 4:
-                                System.out.println("4. 재고등록");
-                                adminView.updateStockMenu();
+                                adminView.updateStockMenu(); //완료
                                 break;
                             case 5:
-                                System.out.println("5. 전체목록보기");
-                                adminView.updateStockMenu();
+                                adminView.viewAllList(); // 완료
                                 break;
                             case 6:
-                                System.out.println("6. 이전으로 돌아가기");
-                                break;
+                                break; // 완료
                             default:
-                                System.out.println("잘못입력하셨습니다.");
-                                break;
+                                break; // 완료
                         }
                     }
                     break;
 
                 case 5:
-                    System.out.println("5. 종료");
-                    break;
+                    break; //완료
 
                 default:
                     System.out.println("잘못입력하셨습니다.");
