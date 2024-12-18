@@ -3,7 +3,7 @@ package genericTest;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ObjectTest{
+public class ObjectTest {
     public static void main(String[] args) {
         Object dog = new Dog();
         Object cat = new Cat();  //cat,dog 는 기본적으로 object를 상속받는 아이이기 때문에 에러가 나오질 않는다.
