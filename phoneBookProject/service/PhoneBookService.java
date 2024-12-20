@@ -13,7 +13,8 @@ public class PhoneBookService implements ServiceInterface {
     @Override
     public int insertService(PhoneBookDTO dto) {
         System.out.println("[PhoneBookService]-insertService");
-        return 0;
+
+        return bookRepository.insertData(dto);
     }
 
     @Override
@@ -25,7 +26,7 @@ public class PhoneBookService implements ServiceInterface {
     @Override
     public int deleteService(long id) {
         System.out.println("[PhoneBookService]-deleteService");
-        return 0;
+        return bookRepository.deleteData(id);
     }
 
     @Override
@@ -37,7 +38,7 @@ public class PhoneBookService implements ServiceInterface {
     @Override
     public PhoneBookDTO findByIdService(Long id) {
         System.out.println("[PhoneBookService]-findByIdService");
-        return null;
+        return bookRepository.findById(id);
     }
 
     @Override

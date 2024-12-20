@@ -3,10 +3,7 @@ package repository;
 import db.DBConn;
 import dto.PhoneBookDTO;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +17,23 @@ public class PhoneBookRepository implements RepositoryInterface {
     @Override
     public int insertData(PhoneBookDTO dto) {
         System.out.println("[PhoneBookRepository]-insertData");
+        // DB에 저장하기
+        try {
+            sql = "INSERT INTO phone_book (name, age, address, phone, created_at) ";
+            sql = sql + "VALUES(?,?,?,?,?)";
+            psmt = dbConn.prepareStatement(sql);
+            //전달할 인자값을 psmt에 추가  ?에 있는걸 할당해 주는 방법
+            psmt.setString(1, dto.getName());
+            psmt.setInt(2, dto.getAge());
+            psmt.setString(3, dto.getAddress());
+            psmt.setString(4, dto.getPhone());
+            psmt.setTimestamp(5, Timestamp.valueOf(dto.getCreatedAt()));
+
+            //DB 에 저장 요청
+            return psmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return 0;
     }
 
@@ -32,6 +46,14 @@ public class PhoneBookRepository implements RepositoryInterface {
     @Override
     public int deleteData(long id) {
         System.out.println("[PhoneBookRepository]-deleteData");
+        sql = "DELETE FROM phone_book WHERE id = ?";
+        try {
+            psmt = dbConn.prepareStatement(sql);
+            psmt.setLong(1, id);
+            return psmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return 0;
     }
 
@@ -81,6 +103,9 @@ public class PhoneBookRepository implements RepositoryInterface {
     @Override
     public PhoneBookDTO findById(Long id) {
         System.out.println("[PhoneBookRepository]-findById");
+        List<PhoneBookDTO> dtoList = new ArrayList<>();
+        ResultSet rs = null;
+
         return null;
     }
 
